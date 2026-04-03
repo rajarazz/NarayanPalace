@@ -49,17 +49,37 @@ ${formData.specialRequest || "None"}
 
     const whatsappURL = `https://wa.me/919838102517?text=${encodedMessage}`;
 
-    // redirect to whatsapp
     window.location.href = whatsappURL;
 
     setIsSubmitted(true);
   };
 
+  // UPDATED PLATFORM LINKS
   const platforms = [
-    { name: 'MakeMyTrip', color: 'bg-[#df2525]', icon: <ExternalLink size={18} /> },
-    { name: 'Booking.com', color: 'bg-[#003580]', icon: <ExternalLink size={18} /> },
-    { name: 'Airbnb', color: 'bg-[#ff385c]', icon: <ExternalLink size={18} /> },
-    { name: 'Agoda', color: 'bg-[#5392f9]', icon: <ExternalLink size={18} /> }
+    { 
+      name: 'MakeMyTrip',
+      color: 'bg-[#df2525]',
+      icon: <ExternalLink size={18} />,
+      url: 'https://www.makemytrip.com/'
+    },
+    { 
+      name: 'Booking.com',
+      color: 'bg-[#003580]',
+      icon: <ExternalLink size={18} />,
+      url: 'https://www.booking.com/hotel/in/narayan-palace-homestay.en-gb.html'
+    },
+    { 
+      name: 'Airbnb',
+      color: 'bg-[#ff385c]',
+      icon: <ExternalLink size={18} />,
+      url: 'https://www.airbnb.com/'
+    },
+    { 
+      name: 'Agoda',
+      color: 'bg-[#5392f9]',
+      icon: <ExternalLink size={18} />,
+      url: 'https://www.agoda.com/'
+    }
   ];
 
   return (
@@ -68,7 +88,7 @@ ${formData.specialRequest || "None"}
 
         <div className="grid lg:grid-cols-12 gap-16 items-start">
           
-          {/* Left Section */}
+          {/* LEFT SIDE */}
           <div className="lg:col-span-5 space-y-10">
 
             <div>
@@ -105,6 +125,7 @@ ${formData.specialRequest || "None"}
 
             </div>
 
+            {/* PLATFORM SECTION */}
             <div className="space-y-6">
 
               <h4 className="font-heading text-2xl font-black text-maroon-dark">
@@ -117,7 +138,9 @@ ${formData.specialRequest || "None"}
 
                   <a
                     key={p.name}
-                    href="#"
+                    href={p.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={`${p.color} text-white p-4 rounded-2xl flex items-center justify-between font-bold hover:scale-105 transition-all shadow-lg group`}
                   >
                     {p.name}
@@ -136,7 +159,7 @@ ${formData.specialRequest || "None"}
 
           </div>
 
-          {/* Right Section Form */}
+          {/* RIGHT SIDE FORM */}
           <div className="lg:col-span-7">
 
             <motion.div
@@ -181,57 +204,41 @@ ${formData.specialRequest || "None"}
                       </h3>
                     </div>
 
-                    {/* Name + Phone */}
+                    {/* NAME + PHONE */}
                     <div className="grid md:grid-cols-2 gap-6">
 
-                      <div className="space-y-2">
+                      <input
+                        required
+                        type="text"
+                        placeholder="Your Name"
+                        className="w-full px-6 py-4 bg-cream/50 border border-gold/10 rounded-2xl"
+                        value={formData.name}
+                        onChange={(e) =>
+                          setFormData({ ...formData, name: e.target.value })
+                        }
+                      />
 
-                        <label className="text-xs font-bold text-maroon/40 uppercase tracking-widest px-2">
-                          Your Name
-                        </label>
-
-                        <input
-                          required
-                          type="text"
-                          placeholder="John Doe"
-                          className="w-full px-6 py-4 bg-cream/50 border border-gold/10 rounded-2xl focus:outline-none focus:border-saffron focus:ring-4 focus:ring-saffron/10 transition-all font-medium text-maroon-dark"
-                          value={formData.name}
-                          onChange={(e) =>
-                            setFormData({ ...formData, name: e.target.value })
-                          }
-                        />
-
-                      </div>
-
-                      <div className="space-y-2">
-
-                        <label className="text-xs font-bold text-maroon/40 uppercase tracking-widest px-2">
-                          Phone Number
-                        </label>
-
-                        <input
-                          required
-                          type="tel"
-                          placeholder="+91 99999-99999"
-                          className="w-full px-6 py-4 bg-cream/50 border border-gold/10 rounded-2xl focus:outline-none focus:border-saffron focus:ring-4 focus:ring-saffron/10 transition-all font-medium text-maroon-dark"
-                          value={formData.phone}
-                          onChange={(e) =>
-                            setFormData({ ...formData, phone: e.target.value })
-                          }
-                        />
-
-                      </div>
+                      <input
+                        required
+                        type="tel"
+                        placeholder="+91 99999 99999"
+                        className="w-full px-6 py-4 bg-cream/50 border border-gold/10 rounded-2xl"
+                        value={formData.phone}
+                        onChange={(e) =>
+                          setFormData({ ...formData, phone: e.target.value })
+                        }
+                      />
 
                     </div>
 
-                    {/* Email + Room */}
+                    {/* EMAIL + ROOM */}
                     <div className="grid md:grid-cols-2 gap-6">
 
                       <input
                         required
                         type="email"
-                        placeholder="john@example.com"
-                        className="w-full px-4 py-4 bg-cream/50 border border-gold/10 rounded-2xl focus:outline-none focus:border-saffron focus:ring-4 focus:ring-saffron/10"
+                        placeholder="Email Address"
+                        className="w-full px-6 py-4 bg-cream/50 border border-gold/10 rounded-2xl"
                         value={formData.email}
                         onChange={(e) =>
                           setFormData({ ...formData, email: e.target.value })
@@ -239,7 +246,7 @@ ${formData.specialRequest || "None"}
                       />
 
                       <select
-                        className="w-full px-4 py-4 bg-cream/50 border border-gold/10 rounded-2xl"
+                        className="w-full px-6 py-4 bg-cream/50 border border-gold/10 rounded-2xl"
                         value={formData.roomType}
                         onChange={(e) =>
                           setFormData({ ...formData, roomType: e.target.value })
@@ -252,13 +259,13 @@ ${formData.specialRequest || "None"}
 
                     </div>
 
-                    {/* Dates + Guests */}
+                    {/* DATES + GUESTS */}
                     <div className="grid md:grid-cols-3 gap-6">
 
                       <input
                         type="date"
                         required
-                        className="w-full px-4 py-4 bg-cream/50 border border-gold/10 rounded-2xl"
+                        className="w-full px-6 py-4 bg-cream/50 border border-gold/10 rounded-2xl"
                         value={formData.checkIn}
                         onChange={(e) =>
                           setFormData({ ...formData, checkIn: e.target.value })
@@ -268,7 +275,7 @@ ${formData.specialRequest || "None"}
                       <input
                         type="date"
                         required
-                        className="w-full px-4 py-4 bg-cream/50 border border-gold/10 rounded-2xl"
+                        className="w-full px-6 py-4 bg-cream/50 border border-gold/10 rounded-2xl"
                         value={formData.checkOut}
                         onChange={(e) =>
                           setFormData({ ...formData, checkOut: e.target.value })
@@ -276,7 +283,7 @@ ${formData.specialRequest || "None"}
                       />
 
                       <select
-                        className="w-full px-4 py-4 bg-cream/50 border border-gold/10 rounded-2xl"
+                        className="w-full px-6 py-4 bg-cream/50 border border-gold/10 rounded-2xl"
                         value={formData.guests}
                         onChange={(e) =>
                           setFormData({ ...formData, guests: e.target.value })
@@ -293,7 +300,7 @@ ${formData.specialRequest || "None"}
                     <textarea
                       rows="3"
                       placeholder="Special Request"
-                      className="w-full px-4 py-4 bg-cream/50 border border-gold/10 rounded-2xl"
+                      className="w-full px-6 py-4 bg-cream/50 border border-gold/10 rounded-2xl"
                       value={formData.specialRequest}
                       onChange={(e) =>
                         setFormData({
@@ -305,10 +312,10 @@ ${formData.specialRequest || "None"}
 
                     <button
                       type="submit"
-                      className="w-full py-5 bg-saffron text-maroon-dark font-black text-xl rounded-2xl hover:bg-gold-dark transition-all flex items-center justify-center gap-3 shadow-xl border-2 border-saffron-dark group"
+                      className="w-full py-5 bg-saffron text-maroon-dark font-black text-xl rounded-2xl hover:bg-gold-dark transition-all flex items-center justify-center gap-3 shadow-xl"
                     >
                       Send Inquiry
-                      <ArrowRight size={24} className="group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight size={24} />
                     </button>
 
                   </form>

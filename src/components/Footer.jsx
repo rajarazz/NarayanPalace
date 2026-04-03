@@ -68,16 +68,18 @@ const Footer = () => {
               <li className="flex items-start gap-4">
                 <MapPin className="text-saffron w-5 h-5 flex-shrink-0" />
                 <span className="text-cream/60 text-sm leading-relaxed">
-                  D. 32/123, xyz Tola, <br /> Near Assi Ghat, Varanasi
+                  Near, Jagannath Mandir Rd, Assi Ghat,<br /> Dumraon Colony, Varanasi, Uttar Pradesh 221005
                 </span>
+                
+
               </li>
               <li className="flex items-center gap-4">
                 <Phone className="text-saffron w-5 h-5 flex-shrink-0" />
-                <span className="text-cream/60 text-sm">+91 98765-43210</span>
+                <span className="text-cream/60 text-sm">+91 9838102517</span>
               </li>
               <li className="flex items-center gap-4">
                 <Mail className="text-saffron w-5 h-5 flex-shrink-0" />
-                <span className="text-cream/60 text-sm">contact@narayanplaces.com</span>
+                <span className="text-cream/60 text-sm">ravinagw@gmail.com</span>
               </li>
             </ul>
           </div>

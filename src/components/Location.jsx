@@ -4,12 +4,12 @@ import { MapPin, Plane, Train, Navigation, Info } from 'lucide-react';
 
 const Location = () => {
   const attractions = [
-    { name: 'Kashi Vishwanath Temple', dist: '1.2 km', icon: <Info size={16} /> },
-    { name: 'Dashashwamedh Ghat', dist: '1.5 km', icon: <Navigation size={16} /> },
-    { name: 'Assi Ghat', dist: '2.8 km', icon: <Navigation size={16} /> },
-    { name: 'Sarnath Buddhist Site', dist: '9.0 km', icon: <Info size={16} /> },
-    { name: 'Varanasi Junction Station', dist: '3.5 km', icon: <Train size={16} /> },
-    { name: 'Lal Bahadur Shastri Airport', dist: '24.0 km', icon: <Plane size={16} /> }
+    { name: 'Kashi Vishwanath Temple', dist: '2.4 km', icon: <Info size={16} /> },
+    { name: 'Dashashwamedh Ghat', dist: '1.8 km', icon: <Navigation size={16} /> },
+    { name: 'Assi Ghat', dist: '200 m', icon: <Navigation size={16} /> },
+    { name: 'Sarnath Buddhist Site', dist: '13 km', icon: <Info size={16} /> },
+    { name: 'Varanasi Junction Station', dist: '5.2 km', icon: <Train size={16} /> },
+    { name: 'Lal Bahadur Shastri Airport', dist: '27 km', icon: <Plane size={16} /> }
   ];
 
   return (

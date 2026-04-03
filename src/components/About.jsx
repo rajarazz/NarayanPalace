@@ -53,12 +53,7 @@ const About = () => {
             Nestled in a peaceful neighborhood, our homestay offers more than just a room; it’s an experience that 
             connects you to the spiritual heart of Kashi.
           </p>
-          <p className="text-lg text-maroon/80 mb-10 leading-relaxed">
-            From the hand-painted murals reflecting local culture to the warm smiles of our dedicated staff, 
-            we ensure your stay is comfortable, authentic, and memorable. Choose us for a stay that feels 
-            like home, away from home.
-          </p>
-
+          
           <div className="grid sm:grid-cols-2 gap-8">
             {highlights.map((item, index) => (
               <div key={index} className="flex gap-4 group">

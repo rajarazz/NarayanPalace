@@ -1,11 +1,18 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Search } from 'lucide-react';
-import img1 from '../assets/hero.png';
-import img2 from '../assets/about.png';
 import img3 from '../assets/room.png';
 import img4 from '../assets/amenity_1.png';
 import img5 from '../assets/amenity_2.png';
+import pic from '../assets/pic.png';
+import pic1 from '../assets/pic1.png';
+import pic2 from '../assets/pic2.png';  
+import pic3 from '../assets/pic3.png';
+import pic4 from '../assets/pic4.png';
+
+
+
+
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -13,32 +20,31 @@ const Gallery = () => {
   const images = [
     {
       id: 1,
-      src: img1,
+      src: pic,
       title: 'Divine Hero Mural',
       category: 'Art'
     },
     {
       id: 2,
-      src: img2,
+      src: pic1,
       title: 'Our Welcoming Hallway',
       category: 'Interior'
     },
     {
       id: 3,
-      src: img3,
-      title: 'Comfortable Deluxe Room',
+      src: pic2,
+  
       category: 'Rooms'
     },
     {
       id: 4,
-      src: img4,
-      title: 'Glistening Chandelier',
+      src: pic3,
+
       category: 'Lobby'
     },
     {
       id: 5,
-      src: img5,
-      title: 'Modern Spa Bathroom',
+      src: pic4,
       category: 'Bathroom'
     }
   ];

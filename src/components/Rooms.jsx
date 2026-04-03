@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { BedDouble, Check, ArrowRight, X, Star } from 'lucide-react';
-import bedroomImg from '../assets/room.png'; 
+
+import room1 from '../assets/room1.png';
+import room2 from '../assets/room2.png';
+import room3 from '../assets/room3.png';  
 
 const RoomCard = ({ room, onShowDetails }) => {
   return (
@@ -75,28 +78,28 @@ const Rooms = () => {
       id: 1,
       name: 'Deluxe Heritage Room',
       description: 'Experience true comfort in our spacious Deluxe Rooms, featuring traditional Varanasi aesthetics with modern luxury.',
-      price: '2,499',
-      image: bedroomImg,
+      price: '1300',
+      image: room1,
       longDescription: 'Our Deluxe Heritage Room is thoughtfully designed to provide a restful sanctuary after a day of exploring Varanasi. Each room features hand-selected decor, premium bedding, and a peaceful ambiance that ensures a rejuvenating stay. Enjoy the blend of ancient culture and contemporary convenience.',
-      features: ['Air Conditioned', 'Smart TV', 'Spacious Closet', 'Attached Bath', 'Work Table', 'Ganga View']
+      features: ['Air Conditioned','Wi-Fi Included',  'Attached Bath', 'Balcony View', 'Room Service']
     },
     {
       id: 2,
       name: 'Premium Family Suite',
       description: 'Ideal for families or groups, this suite offers extra space and privacy with a vibrant cultural touch.',
-      price: '4,499',
-      image: bedroomImg,
+      price: '2000',
+      image: room2,
       longDescription: 'Our Premium Family Suite is the perfect choice for families seeking a home-away-from-home experience. With interconnected spaces and ample living area, it allows for both togetherness and privacy. The suite is adorned with local artwork and offers top-tier amenities for all ages.',
-      features: ['Private Balcony', 'Queen Beds', 'Mini Fridge', 'Large Windows', 'Family Friendly']
+      features: ['Air Conditioned', 'Wi-Fi Included', 'Spacious Closet', 'Attached Bath', 'Balcony View', 'Room Service']
     },
     {
       id: 3,
       name: 'Standard Heritage Room',
       description: 'A cozy and authentic stay experience for budget-conscious solo travelers or couples.',
-      price: '1,799',
-      image: bedroomImg,
+      price: '1,000',
+      image: room3,
       longDescription: 'Our Standard Heritage Room offers all the essential comforts without compromising on the authentic Varanasi vibe. Each room is meticulously cleaned and maintained to provide a safe and pleasant stay for our guests. A perfect base for your spiritual journey.',
-      features: ['Wi-Fi Included', 'Ceiling Fan', 'Daily Cleaning', 'Hot Water']
+      features: ['Wi-Fi Included', 'Ceiling Fan', 'Attached Bath', 'Balcony View', 'Room Service']
     }
   ];
 
