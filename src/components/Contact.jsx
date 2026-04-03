@@ -81,7 +81,7 @@ const Contact = () => {
             icon={<Mail className="w-5 h-5 md:w-7 md:h-7" />}
             label="Email"
             value="ravinagw@gmail.com"
-            href="mailto:ravinagw@gmail.com"
+            href="mailto:ravinagwa@gmail.com"
           />
 
           {/* Location */}
